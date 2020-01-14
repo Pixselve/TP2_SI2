@@ -88,12 +88,21 @@ object Motifs extends App {
    * Une image illustrant un cercle noir
    */
   val blackCircle = allColor(new Circle(40), BLACK)
-
+  /**
+   * Une image illustrant deux cercles noirs
+   */
   val twoCircle = new OnFrontAt(blackCircle, blackCircle, 55, 0)
+  /**
+   * Une image illustrant trois cercles noirs
+   */
   val threeCircle = new OnFrontAt(twoCircle, blackCircle, -55 / 2, 55)
-
+  /**
+   * Une image illustrant un triangle noir
+   */
   val blackTriangle = new Rotate(allColor(new Triangle(50), BLACK), 0)
-
+  /**
+   * Une image illustrant un pic
+   */
   val pic = new OnFrontAt(threeCircle, blackTriangle, -43, -55 * 2 - 10)
   draw(pic, "pic")
 
