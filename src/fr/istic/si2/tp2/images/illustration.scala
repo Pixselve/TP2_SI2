@@ -33,6 +33,7 @@ object ImageMeteo extends App {
       case "beau" => true
       case "couvert" => true
       case "gris" => true
+      case _ => false
     }
   }
 
