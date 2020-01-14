@@ -1,28 +1,42 @@
 package fr.istic.si2.tp2.images
 
 import fr.istic.si2.scribble._
+import fr.istic.si2.tp2.images.Motifs.{cloud, sun}
+
 import scala.io.StdIn._
 
 object ImageMeteo extends App {
 
   // Définition des images illustrant la météo
-  val sun : Image = FromFile("./img/sun.png")
-  val cloud : Image = FromFile("./img/cloud.png")
-  val cloudy : Image = ??? // TODO TP2 réutiliser/recopier le code d'un exercice précédent!
+  val sun: Image = FromFile("./img/sun.png")
+  val cloud: Image = FromFile("./img/cloud.png")
+  val cloudy: Image = onBackAt(cloud, sun, -30, -20)
 
   /**
    * @param t une chaine dans {"beau", "couvert", "gris" }
    * @return une Image illustrant le temps décrit par t
    */
-  def temps(t: String): Image = ???
+  def temps(t: String): Image = {
+    t match {
+      case "beau" => sun
+      case "couvert" => cloud
+      case "gris" => cloudy
+    }
+  }
 
   /**
    * @param t une chaine quelconque
    * @return t est une chaine parmi "beau", "couvert", et "gris"
    */
-  def tempsPossible(t: String): Boolean = ???
-  
-  
+  def tempsPossible(t: String): Boolean = {
+    t match {
+      case "beau" => true
+      case "couvert" => true
+      case "gris" => true
+    }
+  }
+
+
   // Boucle d'interaction simple avec l'utilisateur
   do {
     println("Quel temps fait-il (beau, couvert, ou gris) ?")

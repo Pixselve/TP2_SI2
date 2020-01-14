@@ -13,8 +13,8 @@ object Motifs extends App {
   /**
    * Une image de soleil cachée par un nuage.
    */
-  /* TODO TP2: Vous devez utiliser sun et cloud. */
   val cloudy: Image = onBackAt(cloud, sun, -30, -20)
+  draw(cloudy, "cloudy")
 
 
   /**
@@ -32,22 +32,22 @@ object Motifs extends App {
   /**
    * Une image illustrant l'arrêt de la lecture et la remise à zéro (STOP)
    */
-  val stop: Image = LineColor(FillColor(new Rectangle(50, 50), RED), TRANSPARENT)
-
+  val stop: Image = allColor(new Rectangle(50, 50), RED)
+  draw(stop, "stop")
   /**
    * Une image illustrant l'arrêt de la lecture (PAUSE)
    */
-  val pause: Image = new Beside(LineColor(FillColor(new Rectangle(15, 50), GREEN), TRANSPARENT), new Beside(LineColor(FillColor(new Rectangle(10, 50), TRANSPARENT), TRANSPARENT), LineColor(FillColor(new Rectangle(15, 50), GREEN), TRANSPARENT)))
-
+  val pause: Image = new Beside(allColor(new Rectangle(15, 50), GREEN), new Beside(allColor(new Rectangle(10, 50), TRANSPARENT), allColor(new Rectangle(15, 50), GREEN)))
+  draw(pause, "pause")
   /**
    * Une image illustrant le démarrage de la lecture (PLAY) 
    */
   val play: Image = Rotate(LineColor(FillColor(new Triangle(50), BLUE), BLUE), -89)
-
+  draw(play, "play")
   /**
    * Une image illustrant la sélection de la prochaine piste (NEXT)
    */
-  val next: Image = new Beside(new Beside(Rotate(LineColor(FillColor(new Triangle(50), BLACK), BLACK), -89), Rotate(LineColor(FillColor(new Triangle(50), BLACK), BLACK), -89)), LineColor(FillColor(new Rectangle(10, 50), BLACK), BLACK))
+  val next: Image = new Beside(new Beside(Rotate(allColor(new Triangle(50), BLACK), -89), Rotate(allColor(new Triangle(50), BLACK), -89)), allColor(new Rectangle(10, 50), BLACK))
   draw(next, "next")
   /**
    * Une image illustrant la sélection de la piste précédente (PREVIOUS)

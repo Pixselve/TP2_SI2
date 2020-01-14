@@ -1,5 +1,6 @@
 package fr.istic.si2.tp2.exercices
 
+
 import scala.util.Random
 
 object ExosBasiques extends App {
@@ -54,7 +55,7 @@ object ExosBasiques extends App {
    * @return l'entier x "renversé": son chiffre des dizaines est celui
    *         des unités de x, et réciproquement. Son signe est conservé
    */
-  def renverser(x: Int): Int = unite(x) * 10 + dizaine(x)
+  def renverser(x: Int): Int = if (signe(x)) unite(x) * 10 + dizaine(x) else -1 * unite(x) * 10 + dizaine(x)
 
 
   System.out.println(renverser(0))
